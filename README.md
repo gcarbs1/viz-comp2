@@ -1,4 +1,4 @@
-# LEVA — Seminário 02
+# LEVA — SCC5836
 
 Apresentação web sobre o artigo **“LEVA: Using Large Language Models to Enhance Visual Analytics”**, publicada na *IEEE Transactions on Visualization and Computer Graphics*.
 

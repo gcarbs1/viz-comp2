@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#f8f6ef">
-  <title>LEVA | Seminário 02</title>
+  <title>LEVA | SCC5836</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#f8f6ef;--paper:#fffef9;--ink:#11110f;--muted:#5f605d;--rule:#11110f;
@@ -18,36 +18,36 @@
     }
     *{box-sizing:border-box}
     html,body{width:100%;height:100%;margin:0;overflow:hidden}
-    body{background:#161614;color:var(--ink);font-family:Outfit,"Avenir Next","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    body{background:#161614;color:var(--ink);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
     button{font:inherit}h1,h2,h3,p,figure,blockquote{margin:0}
     .deck,.slides{position:relative;width:100%;height:100%;overflow:hidden}
     .slide{position:absolute;inset:0;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;gap:clamp(.72rem,1.55vh,1.15rem);padding:var(--pad-y) var(--pad-x) clamp(1.35rem,2.8vh,2.3rem);background:linear-gradient(90deg,var(--phase) 0 5.5rem,transparent 5.5rem) top left/100% 5px no-repeat,var(--bg);opacity:0;visibility:hidden;transform:translateX(2.2%);transition:opacity .24s ease,transform .38s ease,visibility .24s}
     .slide.active{opacity:1;visibility:visible;transform:none}.slide.before{transform:translateX(-2.2%)}
     .phase-problem{--phase:var(--red)}.phase-method{--phase:var(--blue)}.phase-evidence{--phase:var(--green)}.phase-review{--phase:var(--yellow)}
     .mast{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-bottom:.65rem;border-bottom:1.5px solid var(--rule);font-size:clamp(.7rem,.78vw,.82rem);font-weight:700;letter-spacing:.105em;text-transform:uppercase}
-    .mast .phase{display:flex;align-items:center;gap:.55rem;color:var(--muted)}.mast .phase::before{content:"";width:.72rem;height:.72rem;background:var(--phase);border:1px solid var(--ink)}
-    .slide-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:2rem}.slide-head .kicker{align-self:start;color:var(--phase);font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .mast .phase,.slide-head .kicker{display:none}
+    .slide-head{display:block}
     h1{font-family:"DM Serif Display",Georgia,serif;font-size:clamp(4.6rem,8.7vw,9.2rem);font-weight:400;line-height:.82;letter-spacing:-.055em}
-    h2{max-width:76rem;font-size:clamp(2.45rem,3.7vw,4.25rem);font-weight:700;line-height:.98;letter-spacing:-.047em;overflow-wrap:anywhere}
+    h2{max-width:82rem;font-size:clamp(2.2rem,3.05vw,3.55rem);font-weight:700;line-height:1.06;letter-spacing:-.035em;overflow-wrap:anywhere}
     h3{font-size:clamp(1.05rem,1.25vw,1.35rem);line-height:1.18}
     .slide>*,.body>*{min-width:0}.body{min-width:0;min-height:0;display:grid;align-content:center;align-items:stretch;gap:1rem}
     .footer{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:.55rem;border-top:1px solid #bbb8af;color:var(--muted);font-size:clamp(.68rem,.76vw,.8rem)}.footer .source{max-width:76%}.notes{display:none}
     .lead{color:#33332f;font-size:clamp(1.12rem,1.48vw,1.55rem);line-height:1.48}.small{color:var(--muted);font-size:clamp(.84rem,.94vw,1rem);line-height:1.48}.label{color:var(--phase);font-size:.78rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.mono{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace}
     .accent-blue{color:var(--blue)}.accent-red{color:var(--red)}.accent-yellow{color:#bd8200}.accent-green{color:var(--green)}
     .split{grid-template-columns:5fr 7fr;gap:clamp(1.7rem,3.8vw,4rem)}.split-even{grid-template-columns:1fr 1fr;gap:clamp(1.7rem,3vw,3.2rem)}.split-reverse{grid-template-columns:7fr 5fr;gap:clamp(1.7rem,3.8vw,4rem)}.stack{display:grid;align-content:center;gap:1rem}.top-rule{padding-top:1rem;border-top:3px solid var(--ink)}
-    .statement{max-width:72rem;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(2.35rem,4vw,4.5rem);font-weight:400;line-height:1.06;letter-spacing:-.035em}.statement em{color:var(--phase);font-style:normal}
+    .statement{max-width:72rem;font-size:clamp(1.75rem,2.7vw,3rem);font-weight:600;line-height:1.18;letter-spacing:-.025em}.statement em{color:var(--phase);font-style:normal}
     .deck-grid{display:grid;grid-template-columns:repeat(var(--cols,3),1fr);border-top:3px solid var(--ink);border-bottom:1px solid var(--ink)}
     .deck-item{position:relative;min-width:0;padding:1.1rem 1.25rem 1.15rem}.deck-item:first-child{padding-left:0}.deck-item:last-child{padding-right:0}.deck-item+.deck-item{border-left:1px solid #aaa79e}
     .deck-item b{display:block;margin-bottom:.9rem;color:var(--phase);font:800 .78rem ui-monospace,"SFMono-Regular",Consolas,monospace;letter-spacing:.08em}.deck-item h3{margin-bottom:.48rem}.deck-item p{color:var(--muted);font-size:clamp(.88rem,1vw,1.06rem);line-height:1.48}.deck-item strong{color:var(--ink)}
     .number-list{display:grid;border-top:3px solid var(--ink)}.number-row{display:grid;grid-template-columns:4rem minmax(0,1fr);gap:1rem;padding:.92rem 0;border-bottom:1px solid #aaa79e;align-items:start}.number-row b{color:var(--phase);font:800 1rem ui-monospace,monospace}.number-row p{color:#33332f;font-size:clamp(.98rem,1.12vw,1.18rem);line-height:1.45}.number-row strong{color:var(--ink)}
     .figure{min-height:0;display:grid;place-items:center;padding:.7rem;border:1.5px solid var(--ink);background:var(--paper)}.figure img{display:block;width:100%;height:100%;max-height:53vh;object-fit:contain}.figure.tall img{max-height:57vh}.figure.wide img{max-height:47vh}
     .callout{padding:.9rem 1rem;border-left:5px solid var(--phase);background:color-mix(in srgb,var(--phase) 10%,var(--bg));font-size:clamp(.94rem,1.04vw,1.08rem);line-height:1.48}
-    .quote{padding:1.1rem 0;border-top:3px solid var(--ink);border-bottom:1px solid #aaa79e;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(1.4rem,2vw,2.1rem);line-height:1.3}.quote cite{display:block;margin-top:.7rem;color:var(--muted);font:600 .78rem Outfit,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+    .quote{padding:1.1rem 0;border-top:3px solid var(--ink);border-bottom:1px solid #aaa79e;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(1.4rem,2vw,2.1rem);line-height:1.3}.quote cite{display:block;margin-top:.7rem;color:var(--muted);font:600 .78rem "Helvetica Neue",Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase}
     .flow{display:grid;grid-template-columns:repeat(var(--steps,5),1fr);border-top:3px solid var(--ink);border-bottom:1px solid var(--ink)}.flow-step{position:relative;min-width:0;padding:1rem .95rem}.flow-step+.flow-step{border-left:1px solid #aaa79e}.flow-step:not(:last-child)::after{content:"→";position:absolute;right:-.52rem;top:1rem;z-index:2;padding:0 .18rem;background:var(--bg);color:var(--phase);font-weight:800}.flow-step b{display:block;margin-bottom:1rem;color:var(--phase);font:800 .75rem ui-monospace,monospace}.flow-step strong{display:block;margin-bottom:.38rem;font-size:1.03rem}.flow-step span{display:block;color:var(--muted);font-size:.86rem;line-height:1.4}
-    .formula{display:grid;place-items:center;min-height:7rem;padding:1rem;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);font-family:"DM Serif Display",Georgia,serif;font-size:clamp(1.75rem,2.8vw,3rem);text-align:center}.formula .tuple{color:var(--blue)}.formula small{display:block;margin-top:.55rem;color:var(--muted);font:500 .9rem Outfit,sans-serif}
+    .formula{display:grid;place-items:center;min-height:7rem;padding:1rem;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);font-family:"DM Serif Display",Georgia,serif;font-size:clamp(1.75rem,2.8vw,3rem);text-align:center}.formula .tuple{color:var(--blue)}.formula small{display:block;margin-top:.55rem;color:var(--muted);font:500 .9rem "Helvetica Neue",Arial,sans-serif}
     .metric-line{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1.2rem;align-items:baseline;padding:.8rem 0;border-top:1px solid #aaa79e}.metric-line:last-child{border-bottom:1px solid #aaa79e}.metric-line strong{min-width:7rem;color:var(--phase);font-family:"DM Serif Display",Georgia,serif;font-size:clamp(2rem,3vw,3.25rem);font-weight:400;line-height:1}.metric-line span{color:#33332f;font-size:clamp(.95rem,1.08vw,1.15rem);line-height:1.42}
-    .swatch-title{display:flex;flex-wrap:wrap;gap:.08em}.swatch-title span:nth-child(1){color:var(--blue)}.swatch-title span:nth-child(2){color:var(--red)}.swatch-title span:nth-child(3){color:#d39200}.swatch-title span:nth-child(4){color:var(--green)}
-    .cover{grid-template-rows:auto minmax(0,1fr) auto;background:linear-gradient(90deg,var(--blue) 0 25%,var(--red) 25% 50%,var(--yellow) 50% 75%,var(--green) 75%) top left/100% 8px no-repeat,var(--bg)}
+    .swatch-title{display:flex;flex-wrap:wrap;gap:.08em}.swatch-title span{color:var(--ink)}
+    .cover{grid-template-rows:auto minmax(0,1fr) auto;background:linear-gradient(var(--ink),var(--ink)) top left/100% 5px no-repeat,var(--bg)}
     .cover-main{display:grid;grid-template-columns:7.3fr 4.7fr;gap:5vw;align-items:center}.cover .eyebrow{margin-bottom:1rem;color:var(--muted);font-size:.82rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}.cover h1{font-size:clamp(7rem,13vw,13.5rem)}.cover .subtitle{max-width:50rem;margin-top:1rem;font-size:clamp(1.35rem,2vw,2.15rem);font-weight:500;line-height:1.25}.paper-meta{margin-top:1.4rem;padding-top:1rem;border-top:2px solid var(--ink);color:var(--muted);font-size:.9rem;line-height:1.5}
     .presenters{border-top:3px solid var(--ink)}.presenter{display:grid;grid-template-columns:1fr auto;gap:1rem;padding:.78rem 0;border-bottom:1px solid #aaa79e;font-size:.92rem}.presenter span{color:var(--blue);font-family:ui-monospace,monospace}
     .relation{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:.8rem}.relation-node{display:grid;align-content:center;min-height:13rem;padding:1.3rem;border:2px solid var(--ink);background:var(--paper)}.relation-node:nth-of-type(1){border-top:8px solid var(--green)}.relation-node:nth-of-type(2){border-top:8px solid var(--blue)}.relation-node:nth-of-type(3){border-top:8px solid var(--red)}.relation-node h3{font-size:1.35rem}.relation-node p{margin-top:.65rem;color:var(--muted);font-size:1rem;line-height:1.45}.relation-arrow{color:var(--phase);font-size:2rem;font-weight:800}
@@ -60,7 +60,7 @@
     .study-sample{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--ink)}.study-group{padding:1.2rem 1.35rem}.study-group+.study-group{border-left:2px solid var(--ink)}.study-group.control{border-top:8px solid var(--red)}.study-group.treatment{border-top:8px solid var(--green)}.study-group strong{display:block;font-family:"DM Serif Display",Georgia,serif;font-size:3.2rem;font-weight:400}.study-group p{margin-top:.5rem;color:var(--muted);font-size:1rem;line-height:1.45}
     .question-map{display:grid;grid-template-columns:5rem 1fr 1fr;align-items:stretch;border-top:3px solid var(--ink)}.question-map>*{padding:.72rem .85rem;border-bottom:1px solid #aaa79e}.question-map>*:nth-child(3n+2),.question-map>*:nth-child(3n+3){border-left:1px solid #aaa79e}.question-map .qh{background:var(--ink);color:var(--bg);font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.question-map b{color:var(--phase);font-family:ui-monospace,monospace}.question-map span{font-size:.86rem;line-height:1.35}
     .bars{display:grid;gap:.9rem}.bar-row{display:grid;grid-template-columns:10rem 1fr 5rem;gap:.9rem;align-items:center}.bar-row b{font-size:.9rem}.track{height:1.5rem;border:1px solid var(--ink);background:transparent}.fill{height:100%;width:var(--w);background:var(--phase)}.bar-row span{font-size:.9rem;font-weight:800;text-align:right}
-    .verdict{display:grid;grid-template-columns:4.3fr 7.7fr;gap:3rem;align-items:center}.stamp{padding:1.4rem;border:5px solid var(--green);color:var(--green);font-family:"DM Serif Display",Georgia,serif;font-size:clamp(2.5rem,4.7vw,5.2rem);line-height:.92;text-transform:uppercase;transform:rotate(-2deg)}
+    .verdict{display:grid;grid-template-columns:4.3fr 7.7fr;gap:3rem;align-items:center}.stamp{padding:1.4rem;border:3px solid var(--green);color:var(--green);font-size:clamp(2rem,3.4vw,3.8rem);font-weight:700;line-height:1.05;transform:none}
     .notes-panel{position:fixed;z-index:30;top:0;right:0;width:min(42rem,46vw);height:100%;padding:2.2rem 2.4rem 5rem;border-left:4px solid var(--yellow);background:#11110f;color:#f8f6ef;transform:translateX(102%);transition:transform .28s ease;overflow:auto}.notes-panel.open{transform:none}.notes-panel h3{margin-bottom:1rem;color:#8eb0ff;font-size:1.3rem}.notes-panel p{margin:.85rem 0;color:#ddd9cf;font-size:1rem;line-height:1.65}.notes-panel .time{display:inline-block;margin-bottom:1rem;color:#ffd664;font:800 .78rem ui-monospace,monospace;letter-spacing:.08em}.notes-panel .hint{margin-top:1.5rem;padding-top:1rem;border-top:1px solid #555;color:#aaa59a;font-size:.8rem}
     .controls{position:fixed;right:max(.85rem,env(safe-area-inset-right));bottom:max(.85rem,env(safe-area-inset-bottom));z-index:40;display:flex;align-items:center;border:1.5px solid var(--ink);background:var(--bg)}.controls button{display:grid;place-items:center;width:2.2rem;height:2.2rem;border:0;border-right:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}.controls button:hover{background:var(--yellow)}.controls button:last-child{border-right:0}.counter{min-width:4.8rem;text-align:center;font:800 .72rem ui-monospace,monospace}
     .progress{position:fixed;left:0;bottom:0;z-index:45;width:100%;height:4px;background:#d5d1c6}.progress i{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--blue),var(--red),var(--yellow),var(--green));transition:width .3s ease}
@@ -75,7 +75,7 @@
   <div class="slides">
 
     <section class="slide cover active" data-title="Título">
-      <header class="mast"><span>SCC5836 · Visualização Computacional</span><span class="phase">Seminário 02</span></header>
+      <header class="mast"><span>SCC5836 · Visualização Computacional</span></header>
       <div class="cover-main">
         <div><div class="eyebrow">IEEE TVCG · 2025 · Visual Analytics + LLMs</div><h1 class="swatch-title"><span>L</span><span>E</span><span>V</span><span>A</span></h1><p class="subtitle">Using Large Language Models to Enhance Visual Analytics</p><p class="paper-meta">Yuheng Zhao et al. · DOI 10.1109/TVCG.2024.3368060</p></div>
         <div class="presenters"><div class="presenter"><strong>Gabriel Carbinatto</strong><span>12725411</span></div><div class="presenter"><strong>Enzo Castelo Branco Biondi</strong><span>14568142</span></div><div class="presenter"><strong>Murilo Lima Lirani de Carvalho</strong><span>11234673</span></div><div class="presenter"><strong>Matheus Rodrigues Ferreira</strong><span>14762149</span></div></div>
@@ -86,23 +86,23 @@
 
     <section class="slide" data-title="Roteiro">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Abertura</span></header>
-      <div class="slide-head"><h2>Uma apresentação em cinco movimentos</h2><span class="kicker">30–40 minutos</span></div>
+      <div class="slide-head"><h2>Estrutura da apresentação</h2></div>
       <div class="body"><div class="deck-grid" style="--cols:5"><div class="deck-item"><b>01</b><h3>Problema</h3><p>Por que sistemas de VA ainda exigem tanto esforço?</p></div><div class="deck-item"><b>02</b><h3>Framework</h3><p>Como LEVA conecta usuário, interface, funções e LLM?</p></div><div class="deck-item"><b>03</b><h3>Cenários</h3><p>O que acontece com texto, grafos, espaço, tempo e tabelas?</p></div><div class="deck-item"><b>04</b><h3>Estudo</h3><p>Como o experimento foi conduzido e o que ele mede?</p></div><div class="deck-item"><b>05</b><h3>Revisão</h3><p>Quais méritos e limites determinam o parecer?</p></div></div><p class="lead top-rule">O fio condutor é a relação entre <strong>inteligência artificial</strong> e <strong>visualização</strong>: quem calcula, quem interpreta, quem decide e onde a evidência aparece.</p></div>
-      <footer class="footer"><span>Estrutura alinhada aos requisitos do Seminário 02</span><span></span></footer>
+      <footer class="footer"><span>Organização do conteúdo</span><span></span></footer>
       <aside class="notes"><span class="time">50 s</span><h3>Roteiro</h3><p>A apresentação acompanha o argumento do artigo, mas reserva um bloco substancial ao estudo com usuários e à análise crítica, como exige o seminário. Primeiro definimos o problema e a lacuna. Depois desmontamos o framework em mecanismos verificáveis, observamos os dois cenários de uso e examinamos desenho experimental, resultados e ameaças à validade.</p></aside>
     </section>
 
     <section class="slide phase-problem" data-title="IA e visualização">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Problema</span></header>
-      <div class="slide-head"><h2>Visual analytics já é uma parceria entre humano e máquina</h2><span class="kicker">Contexto</span></div>
-      <div class="body"><div class="relation"><div class="relation-node"><h3>Analista</h3><p>Formula perguntas, reconhece relevância e decide quais caminhos seguir.</p></div><div class="relation-arrow">↔</div><div class="relation-node"><h3>Visualização</h3><p>Externaliza padrões, oferece interação e preserva o contexto dos dados.</p></div><div class="relation-arrow">↔</div><div class="relation-node"><h3>Algoritmos</h3><p>Calculam, filtram, recomendam e reduzem o espaço de busca analítico.</p></div></div><div class="callout"><strong>O que muda com LLMs?</strong> A camada algorítmica passa também a interpretar descrições, orquestrar ferramentas e comunicar resultados em linguagem natural.</div></div>
+      <div class="slide-head"><h2>Relação entre analista, visualização e algoritmos</h2></div>
+      <div class="body"><div class="relation"><div class="relation-node"><h3>Analista</h3><p>Formula perguntas, reconhece relevância e decide quais caminhos seguir.</p></div><div class="relation-arrow">↔</div><div class="relation-node"><h3>Visualização</h3><p>Externaliza padrões, oferece interação e preserva o contexto dos dados.</p></div><div class="relation-arrow">↔</div><div class="relation-node"><h3>Algoritmos</h3><p>Calculam, filtram, recomendam e reduzem o espaço de busca analítico.</p></div></div><div class="callout"><strong>Papel adicional dos LLMs:</strong> interpretar descrições, selecionar ferramentas e comunicar resultados em linguagem natural.</div></div>
       <footer class="footer"><span>Introdução · Visual analytics como processo humano-no-loop</span><span></span></footer>
       <aside class="notes"><span class="time">1 min</span><h3>Relação de base</h3><p>Visual analytics combina visualizações interativas e técnicas analíticas para apoiar entendimento, raciocínio e decisão. O humano não é apenas consumidor da resposta: seleciona dados, reconhece significado e redireciona a análise. A visualização funciona como memória externa e espaço de ação.</p><p>O LLM adiciona uma interface linguística e uma capacidade de coordenação. O artigo explora essa capacidade sem eliminar as funções determinísticas nem o julgamento do analista.</p></aside>
     </section>
 
     <section class="slide phase-problem" data-title="Três fricções">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Problema</span></header>
-      <div class="slide-head"><h2>Três fricções atravessam o fluxo analítico</h2><span class="kicker">Motivação</span></div>
+      <div class="slide-head"><h2>Desafios do fluxo de visual analytics</h2></div>
       <div class="body deck-grid" style="--cols:3"><div class="deck-item"><b>C1 · ENTRAR</b><h3>Curva de aprendizado</h3><p>Dados, marcas, canais e coordenações entre vistas não são autoexplicativos. Baixa literacia visual amplia o problema.</p></div><div class="deck-item"><b>C2 · EXPLORAR</b><h3>Perda de direção</h3><p>Há muitos caminhos possíveis, tarefas repetitivas e dependência de conhecimento de domínio para reconhecer bons insights.</p></div><div class="deck-item"><b>C3 · SAIR</b><h3>Memória e síntese</h3><p>Interações se acumulam, descobertas se perdem e transformar o percurso em narrativa exige esforço adicional.</p></div></div>
       <footer class="footer"><span>Seção III-A · Design considerations</span><span></span></footer>
       <aside class="notes"><span class="time">1 min</span><h3>As três fricções</h3><p>Os autores organizam a motivação em três dificuldades. No onboarding, o usuário precisa entender tanto cada vista quanto a coordenação entre vistas. Na exploração, precisa escolher entre muitas direções e repetir operações. Na sumarização, precisa lembrar o que aconteceu, selecionar o que importa e construir um relatório coerente.</p><p>Essa decomposição é importante porque cada estágio exige uma forma diferente de assistência.</p></aside>
@@ -110,15 +110,15 @@
 
     <section class="slide phase-problem" data-title="Lacuna e tese">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Problema</span></header>
-      <div class="slide-head"><h2>A lacuna não é falta de automação — é falta de continuidade</h2><span class="kicker">Tese</span></div>
-      <div class="body split"><div class="stack"><p class="statement">Métodos anteriores apoiam <em>partes</em> do processo, mas raramente acompanham o fluxo completo.</p><div class="callout">Tutoriais, recomendações e relatórios costumam ser soluções isoladas ou específicas de um sistema.</div></div><div class="number-list"><div class="number-row"><b>01</b><p><strong>Uma representação comum</strong> permite ao LLM compreender o sistema.</p></div><div class="number-row"><b>02</b><p><strong>Funções analíticas</strong> mantêm os cálculos fora do modelo de linguagem.</p></div><div class="number-row"><b>03</b><p><strong>Anotações visuais</strong> devolvem resultados ao lugar onde podem ser verificados.</p></div><div class="number-row"><b>04</b><p><strong>Proveniência</strong> conecta exploração e relato final.</p></div></div></div>
+      <div class="slide-head"><h2>Lacuna de pesquisa e hipótese do trabalho</h2></div>
+      <div class="body split"><div class="stack"><p class="statement">A literatura apoia etapas isoladas, mas não fornece uma estratégia geral para o fluxo completo.</p><div class="callout"><strong>Hipótese:</strong> uma especificação comum, funções analíticas e proveniência permitem integrar o LLM de modo contínuo.</div></div><div class="number-list"><div class="number-row"><b>01</b><p><strong>Uma representação comum</strong> permite ao LLM compreender o sistema.</p></div><div class="number-row"><b>02</b><p><strong>Funções analíticas</strong> mantêm os cálculos fora do modelo de linguagem.</p></div><div class="number-row"><b>03</b><p><strong>Anotações visuais</strong> devolvem resultados ao lugar onde podem ser verificados.</p></div><div class="number-row"><b>04</b><p><strong>Proveniência</strong> conecta exploração e relato final.</p></div></div></div>
       <footer class="footer"><span>Introdução e Seção II</span><span></span></footer>
       <aside class="notes"><span class="time">1 min</span><h3>Lacuna</h3><p>A literatura já contém onboarding, guidance, recomendação de visualizações e geração de relatórios. O argumento dos autores é que essas soluções são fragmentadas, pouco adaptáveis e raramente cobrem um sistema complexo do início ao fim.</p><p>A tese de LEVA é que um LLM, apoiado por uma especificação e ferramentas analíticas, pode funcionar como camada contínua de coordenação.</p></aside>
     </section>
 
     <section class="slide phase-problem" data-title="Estado da arte">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Problema</span></header>
-      <div class="slide-head"><h2>LEVA ocupa a interseção de quatro linhas de pesquisa</h2><span class="kicker">Trabalhos relacionados</span></div>
+      <div class="slide-head"><h2>Posicionamento em relação aos trabalhos anteriores</h2></div>
       <div class="body deck-grid" style="--cols:4"><div class="deck-item"><b>ONBOARDING</b><h3>Aprender a ler e usar</h3><p>Tours interativos superam descrições passivas, mas demandam autoria específica.</p></div><div class="deck-item"><b>GUIDANCE</b><h3>Reduzir a lacuna</h3><p>Recomendação de interação é útil, porém requer logs e pode ser opaca.</p></div><div class="deck-item"><b>PROVENIÊNCIA</b><h3>Registrar e relatar</h3><p>Sistemas guardam caminhos analíticos, mas a seleção e a síntese continuam manuais.</p></div><div class="deck-item"><b>LLMs + VIS</b><h3>Linguagem como interface</h3><p>Modelos já geram gráficos e código; aqui passam a operar dentro de um sistema VA.</p></div></div>
       <footer class="footer"><span>Seção II-A–D</span><span></span></footer>
       <aside class="notes"><span class="time">1 min</span><h3>Posicionamento</h3><p>No onboarding, a base são estudos sobre literacia visual e tours. Em guidance, a alternativa dominante aprende sequências de interação, mas exige dados históricos e se prende a cada sistema. Em proveniência, trabalhos registram e editam trajetórias. Na interface em linguagem natural, modelos geram visualizações, código ou legendas.</p><p>LEVA combina essas linhas e reivindica ser a primeira integração abrangente de LLMs ao fluxo VA.</p></aside>
@@ -126,15 +126,15 @@
 
     <section class="slide phase-problem" data-title="Considerações">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Problema</span></header>
-      <div class="slide-head"><h2>De desafios abstratos a decisões de design</h2><span class="kicker">C1–C3</span></div>
-      <div class="body split-even"><div class="number-list"><div class="number-row"><b>C1</b><p>Representar <strong>dados, codificação e coordenação</strong> de forma legível pelo modelo.</p></div><div class="number-row"><b>C2</b><p>Oferecer direção sem converter exploração aberta em uma sequência rígida.</p></div><div class="number-row"><b>C3</b><p>Preservar a trajetória sem transformar cada clique em conteúdo do relatório.</p></div></div><div class="stack"><blockquote class="quote">A assistência precisa reduzir esforço sem retirar do analista a capacidade de escolher.<cite>Síntese do problema de design</cite></blockquote><p class="lead">Essa tensão — <strong>guiar versus dirigir</strong> — reaparece na avaliação crítica.</p></div></div>
+      <div class="slide-head"><h2>Considerações de design C1–C3</h2></div>
+      <div class="body split-even"><div class="number-list"><div class="number-row"><b>C1</b><p>Representar <strong>dados, codificação e coordenação</strong> de forma legível pelo modelo.</p></div><div class="number-row"><b>C2</b><p>Oferecer direção sem converter exploração aberta em uma sequência rígida.</p></div><div class="number-row"><b>C3</b><p>Preservar a trajetória sem transformar cada clique em conteúdo do relatório.</p></div></div><div class="number-list"><div class="number-row"><b>I</b><p><strong>Entrada:</strong> descrição formal do sistema e de seu estado.</p></div><div class="number-row"><b>P</b><p><strong>Processamento:</strong> seleção de funções e avaliação de resultados.</p></div><div class="number-row"><b>O</b><p><strong>Saída:</strong> tutorial, anotação e relatório sujeitos à decisão humana.</p></div></div></div>
       <footer class="footer"><span>Seção III-A</span><span></span></footer>
       <aside class="notes"><span class="time">55 s</span><h3>Considerações</h3><p>As considerações C1 a C3 definem decisões arquiteturais: criar uma gramática de sistema, oferecer guidance de iniciativa mista e preservar uma proveniência seletiva.</p><p>O risco estrutural é que uma ferramenta criada para orientar passe a restringir a exploração. O próprio artigo reconhece essa tensão na discussão.</p></aside>
     </section>
 
     <section class="slide phase-problem" data-title="Requisitos">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Problema</span></header>
-      <div class="slide-head"><h2>Cinco requisitos conectam problema, sistema e avaliação</h2><span class="kicker">R1–R5</span></div>
+      <div class="slide-head"><h2>Requisitos de design R1–R5</h2></div>
       <div class="body"><div class="requirements"><div class="requirement"><b>R1</b><h3>Codificação visual</h3><p>Explicar dados, marcas, canais e mapeamentos.</p></div><div class="requirement"><b>R2</b><h3>Coordenação</h3><p>Mostrar como uma ação modifica outras vistas.</p></div><div class="requirement"><b>R3</b><h3>Descoberta</h3><p>Automatizar análises sobre diferentes tipos de dados.</p></div><div class="requirement"><b>R4</b><h3>Hipóteses</h3><p>Apoiar formulação e validação em estados atualizados.</p></div><div class="requirement"><b>R5</b><h3>Sumarização</h3><p>Selecionar, organizar e relatar trajetórias analíticas.</p></div></div><p class="lead"><span class="accent-red">C1 → R1–R2</span> &nbsp;·&nbsp; <span class="accent-blue">C2 → R3–R4</span> &nbsp;·&nbsp; <span class="accent-green">C3 → R5</span></p></div>
       <footer class="footer"><span>Seção III-B</span><span></span></footer>
       <aside class="notes"><span class="time">1 min</span><h3>Rastreabilidade</h3><p>Os cinco requisitos são uma das forças metodológicas do artigo. R1 e R2 operacionalizam onboarding; R3 e R4 cobrem exploração e hipótese; R5 cobre sumarização. Mais tarde, cada requisito será associado a pelo menos uma pergunta objetiva e uma subjetiva no estudo.</p></aside>
@@ -142,7 +142,7 @@
 
     <section class="slide phase-method" data-title="Framework">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Framework</span></header>
-      <div class="slide-head"><h2>O framework liga três atores em três estágios</h2><span class="kicker">Visão geral</span></div>
+      <div class="slide-head"><h2>Visão geral do framework LEVA</h2></div>
       <div class="body figure wide"><img src="assets/leva-framework.jpg" alt="Framework LEVA com onboarding, exploração e sumarização"></div>
       <footer class="footer"><span>Figura 1 · LEVA Framework</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 30 s</span><h3>Como ler a figura</h3><p>Leia por linhas: no topo está o analista; no meio, o sistema de visual analytics e as extensões; embaixo, as ações do LLM. Leia por colunas: onboarding, exploração e sumarização.</p><p>A arquitetura combina diálogo, tutorial, recomendação, histórico e relatório. A seta de retorno é central: cada novo estado pode produzir novas recomendações.</p></aside>
@@ -150,7 +150,7 @@
 
     <section class="slide phase-method" data-title="Iniciativa mista">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Framework</span></header>
-      <div class="slide-head"><h2>O LLM não analisa sozinho: ele distribui trabalho</h2><span class="kicker">IA × visualização</span></div>
+      <div class="slide-head"><h2>Distribuição de responsabilidades no fluxo analítico</h2></div>
       <div class="body split-reverse"><div class="figure wide"><img src="assets/leva-workflow.jpg" alt="Fluxo de visual analytics ampliado pelo LLM"></div><div class="number-list"><div class="number-row"><b>LLM</b><p>Interpreta estado, seleciona funções, formula perguntas e explica resultados.</p></div><div class="number-row"><b>FUN</b><p>Funções estatísticas e regras calculam resultados verificáveis.</p></div><div class="number-row"><b>VIS</b><p>Vistas mostram contexto, recebem anotações e capturam novas seleções.</p></div><div class="number-row"><b>HUM</b><p>O analista aceita, rejeita, compara e inicia a próxima rodada.</p></div></div></div>
       <footer class="footer"><span>Figura 2 · Fluxo de iniciativa mista</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 20 s</span><h3>Divisão de trabalho</h3><p>Este é o slide central para a relação entre IA e visualização. O modelo interpreta a especificação e o estado, escolhe ferramentas e transforma saídas em linguagem. Funções externas fazem cálculos; a interface ancora os resultados; o humano decide a direção.</p><p>Essa separação é especialmente importante em dados tabulares, nos quais o artigo encontrou baixa precisão ao pedir cálculos diretamente ao LLM.</p></aside>
@@ -158,7 +158,7 @@
 
     <section class="slide phase-method" data-title="Especificação">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Onboarding</span></header>
-      <div class="slide-head"><h2>Uma especificação transforma a interface em linguagem</h2><span class="kicker">Top-down</span></div>
+      <div class="slide-head"><h2>Especificação do sistema de visual analytics</h2></div>
       <div class="body split-even"><div class="stack"><div class="formula mono" style="font-size:clamp(1rem,1.45vw,1.55rem);text-align:left;place-items:start">SystemSpec {<br>&nbsp;&nbsp;systemInfo,<br>&nbsp;&nbsp;viewsInfo: [<br>&nbsp;&nbsp;&nbsp;&nbsp;viewStyleInfo,<br>&nbsp;&nbsp;&nbsp;&nbsp;viewCoordinationInfo<br>&nbsp;&nbsp;]<br>}</div><p class="small">Pares chave–valor podem descrever também vistas customizadas.</p></div><div class="number-list"><div class="number-row"><b>01</b><p><strong>Sistema:</strong> nome e composição geral.</p></div><div class="number-row"><b>02</b><p><strong>Vista:</strong> dados, marcas, canais, camadas e tooltip.</p></div><div class="number-row"><b>03</b><p><strong>Coordenação:</strong> origem, destino, evento e efeito.</p></div><div class="number-row"><b>04</b><p><strong>Ordem:</strong> visão geral antes dos detalhes.</p></div></div></div>
       <footer class="footer"><span>Seções IV-A e V-B1</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 15 s</span><h3>Especificação</h3><p>O onboarding segue uma estratégia top-down: começa pelo sistema e depois apresenta cada vista. A especificação registra estilo visual e coordenação. Cada layer informa marca e encoding; coordenações ligam vista de origem, vista de destino, tipo de coordenação e eventos.</p><p>A flexibilidade dos pares chave–valor amplia a cobertura, mas também transfere ao desenvolvedor a responsabilidade de escrever descrições claras.</p></aside>
@@ -166,7 +166,7 @@
 
     <section class="slide phase-method" data-title="Tour gerado">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Onboarding</span></header>
-      <div class="slide-head"><h2>O resultado não é documentação: é um tour dentro do sistema</h2><span class="kicker">R1–R2</span></div>
+      <div class="slide-head"><h2>Geração do tutorial de onboarding</h2></div>
       <div class="body split-reverse"><div class="figure tall"><img src="assets/leva-onboarding.jpg" alt="Tour de onboarding no sistema do VAST Challenge"></div><div class="stack"><div class="number-list"><div class="number-row"><b>A</b><p>O Chat view inicia a sequência.</p></div><div class="number-row"><b>B</b><p>O tour explica <strong>mbdata</strong> e <strong>ccdata</strong>.</p></div><div class="number-row"><b>C</b><p>Mostra a coordenação keyword → timeline.</p></div><div class="number-row"><b>D</b><p>Explica a cor dos hexágonos de risco.</p></div></div><div class="callout">A saída do modelo é uma lista de passos com título e descrição em HTML.</div></div></div>
       <footer class="footer"><span>Figura 5 · Exemplo de onboarding</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 10 s</span><h3>Do prompt à interface</h3><p>O prompt recebe a especificação e pede que o modelo explique estilo e relações. A saída é estruturada em passos, com título associado à vista e descrição em HTML. Um componente de tour injeta essa sequência no sistema original.</p><p>O benefício é reduzir a distância entre documentação e ação.</p></aside>
@@ -174,7 +174,7 @@
 
     <section class="slide phase-method" data-title="Insight formal">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Exploração</span></header>
-      <div class="slide-head"><h2>O insight é a unidade que conecta cálculo e interface</h2><span class="kicker">Definição</span></div>
+      <div class="slide-head"><h2>Definição formal de insight</h2></div>
       <div class="body split-even"><div class="stack"><div class="formula">insight := <span class="tuple">⟨ tipo, parâmetros, sujeito, score ⟩</span><small>Equação 1</small></div><div class="formula">sujeito := <span class="tuple">⟨ subespaço, dimensão, medida, contexto ⟩</span><small>Equação 2</small></div></div><div class="number-list"><div class="number-row"><b>T</b><p><strong>Tipo</strong> define a operação: tendência, outlier, correlação etc.</p></div><div class="number-row"><b>P</b><p><strong>Parâmetros</strong> descrevem características específicas.</p></div><div class="number-row"><b>S</b><p><strong>Sujeito</strong> delimita onde o padrão foi encontrado.</p></div><div class="number-row"><b>C</b><p><strong>Contexto</strong> permite reutilizar descobertas anteriores.</p></div></div></div>
       <footer class="footer"><span>Seção IV-B1 · Equações 1 e 2</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 15 s</span><h3>Modelo de insight</h3><p>O insight formaliza a ponte entre dados e anotação. O sujeito inclui subespaço, dimensão, medida e contexto. Em vendas, o subespaço pode ser um produto, a dimensão pode ser tempo e a medida pode ser lucro. Em grafos, esses campos representam entidades, relações e atributos.</p><p>O contexto permite análises compostas, como buscar nós relevantes para um evento já resumido.</p></aside>
@@ -182,7 +182,7 @@
 
     <section class="slide phase-method" data-title="Taxonomia">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Exploração</span></header>
-      <div class="slide-head"><h2>Uma taxonomia comum, extensível por domínio</h2><span class="kicker">15 tipos + extensões</span></div>
+      <div class="slide-head"><h2>Taxonomia de tipos de insight</h2></div>
       <div class="body taxonomy"><div class="taxon"><b>Extremo</b><p>Máximo, mínimo ou item dominante.</p></div><div class="taxon"><b>Outlier</b><p>Observação incompatível com o padrão local.</p></div><div class="taxon"><b>Mudança</b><p>Ponto em que a dinâmica se altera.</p></div><div class="taxon"><b>Tendência</b><p>Direção persistente ao longo de uma dimensão.</p></div><div class="taxon"><b>Correlação</b><p>Associação entre medidas ou vistas.</p></div><div class="taxon"><b>Distribuição</b><p>Forma, dispersão e concentração dos valores.</p></div><div class="taxon"><b>Texto</b><p>Resumo de mensagens ou eventos.</p></div><div class="taxon"><b>Nós</b><p>Entidades centrais em uma rede.</p></div><div class="taxon"><b>Arestas</b><p>Relações importantes entre entidades.</p></div></div>
       <footer class="footer"><span>Seção IV-B1 · Tipos para tabelas, texto e grafos</span><span></span></footer>
       <aside class="notes"><span class="time">55 s</span><h3>Tipos de insight</h3><p>O artigo parte de taxonomias existentes e trabalha com quinze tipos. Para cobrir texto e grafos, acrescenta resumo textual e identificação de nós e links importantes. Insights podem envolver uma única vista ou atravessar vistas coordenadas.</p><p>Desenvolvedores podem adicionar funções específicas do domínio, o que aumenta flexibilidade, mas também revela trabalho de engenharia.</p></aside>
@@ -190,7 +190,7 @@
 
     <section class="slide phase-method" data-title="Score">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Exploração</span></header>
-      <div class="slide-head"><h2>O ranking mistura evidência estatística e julgamento semântico</h2><span class="kicker">Priorização</span></div>
+      <div class="slide-head"><h2>Função de avaliação de insights</h2></div>
       <div class="body stack"><div class="formula">score = 0,5 · significância + 0,2 · impacto + 0,3 · relevância</div><div class="score"><span class="s1">50%<br>significância</span><span class="s2">20%<br>impacto</span><span class="s3">30%<br>relevância</span></div><div class="deck-grid" style="--cols:3"><div class="deck-item"><b>FUNÇÃO</b><h3>Significância</h3><p>Teste estatístico ou métrica específica do tipo.</p></div><div class="deck-item"><b>LLM</b><h3>Impacto</h3><p>Cobertura, consequência, urgência e semântica.</p></div><div class="deck-item"><b>LLM</b><h3>Relevância</h3><p>Alinhamento entre insight e tarefa declarada.</p></div></div></div>
       <footer class="footer"><span>Seção IV-B1 · Pesos definidos empiricamente</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 15 s</span><h3>Score híbrido</h3><p>A significância tem maior peso e pode usar p-valor, tamanho de efeito ou métricas específicas. Impacto e relevância são avaliados pelo LLM. O impacto tenta capturar consequências semânticas; relevância mede alinhamento com a tarefa.</p><p>Os pesos são empíricos e ajustáveis. Isso torna o método pragmático, mas a calibração permanece pouco validada.</p></aside>
@@ -198,23 +198,23 @@
 
     <section class="slide phase-method" data-title="Recomendação">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Exploração</span></header>
-      <div class="slide-head"><h2>Recomendar é um processo em duas conversas</h2><span class="kicker">Estratégia</span></div>
-      <div class="body"><div class="flow" style="--steps:5"><div class="flow-step"><b>01</b><strong>Estado</strong><span>seleção, tarefa, especificação e vistas coordenadas</span></div><div class="flow-step"><b>02 · LLM</b><strong>Escolher</strong><span>tipos, funções, parâmetros e relevância</span></div><div class="flow-step"><b>03 · FUNÇÃO</b><strong>Calcular</strong><span>resultado e significância por método determinístico</span></div><div class="flow-step"><b>04 · LLM</b><strong>Avaliar</strong><span>descrição, impacto, relevância e ranking final</span></div><div class="flow-step"><b>05 · VIS</b><strong>Anotar</strong><span>dados associados destacados nas vistas</span></div></div><p class="lead top-rule"><strong>Por que duas conversas?</strong> O modelo escolhe o trabalho antes de receber resultados calculados, evitando que ele invente números tabulares.</p></div>
+      <div class="slide-head"><h2>Estratégia de recomendação em duas etapas</h2></div>
+      <div class="body"><div class="flow" style="--steps:5"><div class="flow-step"><b>01</b><strong>Estado</strong><span>seleção, tarefa, especificação e vistas coordenadas</span></div><div class="flow-step"><b>02 · LLM</b><strong>Escolher</strong><span>tipos, funções, parâmetros e relevância</span></div><div class="flow-step"><b>03 · FUNÇÃO</b><strong>Calcular</strong><span>resultado e significância por método determinístico</span></div><div class="flow-step"><b>04 · LLM</b><strong>Avaliar</strong><span>descrição, impacto, relevância e ranking final</span></div><div class="flow-step"><b>05 · VIS</b><strong>Anotar</strong><span>dados associados destacados nas vistas</span></div></div><p class="lead top-rule"><strong>Separação funcional:</strong> o LLM seleciona e avalia; funções externas realizam os cálculos quantitativos.</p></div>
       <footer class="footer"><span>Seções IV-B2 e V-B2</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 25 s</span><h3>Do estado à anotação</h3><p>Na primeira conversa, o modelo recebe seleção atual, especificação, tarefa e lista de APIs. Ele escolhe funções e preenche parâmetros. As funções são executadas fora do modelo. Na segunda, o LLM recebe os resultados, escreve descrições e atribui impacto e relevância.</p><p>O resultado estruturado contém vista, campo e valor, necessários para localizar o dado na interface.</p></aside>
     </section>
 
     <section class="slide phase-method" data-title="Anotação">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Exploração</span></header>
-      <div class="slide-head"><h2>O insight volta à visualização — não fica preso no chat</h2><span class="kicker">Feedback visual</span></div>
-      <div class="body split-even"><div class="stack"><p class="statement">Texto <em>comunica</em>.<br>Marcas visuais <em>localizam</em>.</p><div class="callout">O objeto estruturado identifica vista, campo e valores para aplicar destaque, rótulo ou anotação.</div></div><div class="number-list"><div class="number-row"><b>01</b><p>Selecionar elementos visuais correspondentes.</p></div><div class="number-row"><b>02</b><p>Alterar estilo e adicionar explicação próxima ao dado.</p></div><div class="number-row"><b>03</b><p>Propagar insights que atravessam vistas coordenadas.</p></div><div class="number-row"><b>04</b><p>Permitir filtrar ou limpar anotações.</p></div></div></div>
+      <div class="slide-head"><h2>Integração dos insights às visualizações</h2></div>
+      <div class="body split-even"><div class="stack"><p class="statement">A descrição textual e a anotação visual cumprem funções complementares.</p><div class="callout">O objeto estruturado identifica vista, campo e valores para aplicar destaque, rótulo ou anotação.</div></div><div class="number-list"><div class="number-row"><b>01</b><p>Selecionar elementos visuais correspondentes.</p></div><div class="number-row"><b>02</b><p>Alterar estilo e adicionar explicação próxima ao dado.</p></div><div class="number-row"><b>03</b><p>Propagar insights que atravessam vistas coordenadas.</p></div><div class="number-row"><b>04</b><p>Permitir filtrar ou limpar anotações.</p></div></div></div>
       <footer class="footer"><span>Seções IV-B2 e V-B2</span><span></span></footer>
       <aside class="notes"><span class="time">1 min</span><h3>Por que anotar</h3><p>A decisão de devolver o insight à vista é uma contribuição importante. O chat fornece a explicação, mas a anotação associa essa explicação ao dado e facilita verificação. Insights cross-view podem destacar objetos em mais de uma vista.</p><p>Isso mantém a visualização como espaço principal de raciocínio.</p></aside>
     </section>
 
     <section class="slide phase-method" data-title="Proveniência">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Sumarização</span></header>
-      <div class="slide-head"><h2>A trajetória analítica é registrada como uma matriz</h2><span class="kicker">m rodadas × n passos</span></div>
+      <div class="slide-head"><h2>Representação do histórico de exploração</h2></div>
       <div class="body split-reverse"><div class="stack"><div class="matrix"><span class="head"></span><span class="head">1</span><span class="head">2</span><span class="head">3</span><span class="head">4</span><span class="head">5</span><span class="head">6</span><span class="head">rod. 1</span><span class="active">vista</span><span class="llm">insight</span><span class="active">ação</span><span class="skip">—</span><span class="skip">—</span><span class="skip">—</span><span class="head">rod. 2</span><span class="skip">—</span><span class="active">vista</span><span class="llm">insight</span><span class="active">ação</span><span class="llm">insight</span><span class="skip">—</span></div><p class="small">Cada célula preserva vista focal, insight ou interação e screenshot.</p></div><div class="number-list"><div class="number-row"><b>V</b><p><strong>Focused view</strong> registra onde ocorreu o passo.</p></div><div class="number-row"><b>I</b><p><strong>Insight ou interação</strong> registra o conteúdo analítico.</p></div><div class="number-row"><b>S</b><p><strong>Screenshot</strong> preserva a evidência visual.</p></div></div></div>
       <footer class="footer"><span>Seção IV-C · Record preservation</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 10 s</span><h3>Registro</h3><p>Uma rodada contém passos provenientes de insights adotados ou ações autoiniciadas. Para cada passo, o sistema guarda a vista focal, o insight ou objeto de interação e uma captura da vista.</p><p>A ação funciona como contexto do insight. Selecionar um intervalo de tempo, por exemplo, define o subespaço para um resumo posterior.</p></aside>
@@ -222,7 +222,7 @@
 
     <section class="slide phase-method" data-title="Relato seletivo">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Sumarização</span></header>
-      <div class="slide-head"><h2>Registrar tudo não significa relatar tudo</h2><span class="kicker">Seleção humana</span></div>
+      <div class="slide-head"><h2>Seleção do histórico e geração do relatório</h2></div>
       <div class="body"><div class="flow" style="--steps:4"><div class="flow-step"><b>01</b><strong>Revisitar</strong><span>stream revela rodadas e passos anteriores</span></div><div class="flow-step"><b>02</b><strong>Selecionar</strong><span>usuário escolhe a trajetória relevante</span></div><div class="flow-step"><b>03</b><strong>Resumir</strong><span>LLM organiza descobertas e explicações</span></div><div class="flow-step"><b>04</b><strong>Diagramar</strong><span>texto e screenshots viram slides em LaTeX</span></div></div><div class="split-even"><div class="callout"><strong>Força:</strong> o usuário controla qual rodada alimenta o relatório.</div><div class="callout" style="--phase:var(--red)"><strong>Limite:</strong> o log registra a ação, mas não a intenção que a motivou.</div></div></div>
       <footer class="footer"><span>Seções IV-C e V-B3</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 10 s</span><h3>Relato seletivo</h3><p>Como nem todo passo produz conhecimento útil, LEVA apresenta o histórico em um stream e deixa o usuário escolher uma rodada. Só então o LLM recebe a sequência, produz um relatório textual e gera slides com imagens.</p><p>A seleção evita uma transcrição indiscriminada do log. Ainda assim, a motivação mental por trás de uma ação não é capturada.</p></aside>
@@ -230,7 +230,7 @@
 
     <section class="slide phase-method" data-title="Integração">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Implementação</span></header>
-      <div class="slide-head"><h2>Generalidade exige uma interface de integração explícita</h2><span class="kicker">Custo de engenharia</span></div>
+      <div class="slide-head"><h2>Requisitos de integração com o sistema original</h2></div>
       <div class="body split-reverse"><div class="figure tall"><img src="assets/leva-integration.jpg" alt="Extensões do sistema, componentes do LLM e capacidades do usuário"></div><div class="number-list"><div class="number-row"><b>CFG</b><p>Especificação e tarefa analítica.</p></div><div class="number-row"><b>API</b><p>Catálogo de funções com nome e descrição.</p></div><div class="number-row"><b>IN</b><p>Handlers para capturar seleções e estados.</p></div><div class="number-row"><b>OUT</b><p>Handlers para tutorial, anotação e filtros.</p></div></div></div>
       <footer class="footer"><span>Figura 3 · Integration overview</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 15 s</span><h3>Integração</h3><p>LEVA não é um plug-in automático. O sistema original precisa expor especificação, tarefa, funções e dados de seleção, além de aceitar tutoriais e anotações. Os componentes LLM incluem prompts e módulos de apresentação.</p><p>A generalidade está no padrão de integração, não na ausência de trabalho específico.</p></aside>
@@ -238,7 +238,7 @@
 
     <section class="slide phase-method" data-title="Interface">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Implementação</span></header>
-      <div class="slide-head"><h2>Quatro vistas dividem conversa, evidência e memória</h2><span class="kicker">Interface integrada</span></div>
+      <div class="slide-head"><h2>Componentes da interface integrada</h2></div>
       <div class="body split-reverse"><div class="figure tall"><img src="assets/leva-interface.jpg" alt="Interface do LEVA com chat, sistema original, histórico e relatório"></div><div class="stack"><div class="interface-key"><div><b>A</b><strong>Chat</strong><span>tour, perguntas e controle</span></div><div><b>B</b><strong>Sistema</strong><span>dados e anotações</span></div><div><b>C</b><strong>Stream</strong><span>histórico navegável</span></div><div><b>D</b><strong>Report</strong><span>síntese da rodada</span></div></div><p class="lead">A interface separa o que é <strong>dito</strong>, o que é <strong>mostrado</strong> e o que é <strong>lembrado</strong>.</p></div></div>
       <footer class="footer"><span>Figura 4 · Integrated interface</span><span></span></footer>
       <aside class="notes"><span class="time">1 min</span><h3>Quatro vistas</h3><p>O Chat view inicia o tour, oferece perguntas e recebe consultas abertas. O sistema original continua sendo a área principal. O interaction stream guarda a proveniência e fica oculto quando não é necessário. O report view apresenta a síntese escolhida.</p><p>Essa distribuição mantém o resultado próximo à evidência visual.</p></aside>
@@ -246,7 +246,7 @@
 
     <section class="slide phase-evidence" data-title="Cenário VAST">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Cenários</span></header>
-      <div class="slide-head"><h2>Cenário 1 · risco público em Abila City</h2><span class="kicker">VAST Challenge 2021</span></div>
+      <div class="slide-head"><h2>Cenário 1: análise de eventos multifacetados</h2></div>
       <div class="body split-reverse"><div class="figure tall"><img src="assets/leva-onboarding.jpg" alt="Sistema VAST com tutorial de onboarding"></div><div class="stack"><p class="lead">Detectar eventos de risco na noite de 23 de janeiro de 2014 usando mensagens e chamadas de emergência.</p><div class="number-list"><div class="number-row"><b>T</b><p>Timeline como ponto principal de interação.</p></div><div class="number-row"><b>M</b><p>Mapa com distribuição e nível de risco.</p></div><div class="number-row"><b>G</b><p>Grafo de pessoas, locais e relações.</p></div><div class="number-row"><b>K</b><p>Mensagens e palavras-chave ligadas ao período.</p></div></div></div></div>
       <footer class="footer"><span>Seção VI-A · Sistema vencedor do VAST Challenge</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 10 s</span><h3>Por que esse cenário</h3><p>Os autores reproduzem um sistema premiado porque ele combina decisão humana, múltiplas vistas e dados heterogêneos: texto, grafo, espaço e tempo. A tarefa é encontrar e avaliar riscos públicos em Abila City.</p><p>Esse cenário exercita todas as fases do framework.</p></aside>
@@ -254,7 +254,7 @@
 
     <section class="slide phase-evidence" data-title="Trajetória VAST">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Cenários</span></header>
-      <div class="slide-head"><h2>Uma sequência de recomendações reconstrói a história da van preta</h2><span class="kicker">Exploração</span></div>
+      <div class="slide-head"><h2>Sequência de análise no cenário VAST</h2></div>
       <div class="body"><div class="storyline"><div class="story"><time>19:34–19:43</time><h3>Pico selecionado</h3><p>O usuário escolhe o intervalo com maior atividade.</p></div><div class="story"><time>PERGUNTA</time><h3>Regiões de risco</h3><p>LEVA resume atropelamento e tiroteio na loja.</p></div><div class="story"><time>“VAN”</time><h3>Entidade seguida</h3><p>Grafo e mensagens apontam os “van guys”.</p></div><div class="story"><time>4 EVENTOS</time><h3>Narrativa montada</h3><p>Hit and run, abordagem, refém e confronto.</p></div></div><div class="callout"><strong>Resultado:</strong> a rodada com maior relevância pública é selecionada e convertida em relatório com texto e screenshots.</div></div>
       <footer class="footer"><span>Seção VI-A · Uso demonstrativo conduzido pelos autores</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 25 s</span><h3>Trajetória VAST</h3><p>A exploração começa no pico de mensagens. O sistema propõe investigar eventos em regiões de alto risco, resume dois incidentes e identifica nós relevantes. Ao selecionar “van”, quatro eventos são recuperados em horários diferentes.</p><p>O caso demonstra o encadeamento entre sugestões, seleção humana, anotações e relatório. Porém é uma demonstração dos autores.</p></aside>
@@ -262,7 +262,7 @@
 
     <section class="slide phase-evidence" data-title="Cenário tabular">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Cenários</span></header>
-      <div class="slide-head"><h2>Cenário 2 · um dashboard tabular de vendas</h2><span class="kicker">Tableau Superstore 2022</span></div>
+      <div class="slide-head"><h2>Cenário 2: análise de dados tabulares</h2></div>
       <div class="body split-reverse"><div class="figure tall"><img src="assets/leva-tabular.jpg" alt="Insights anotados no dashboard de vendas"></div><div class="stack"><p class="lead">Nove vistas combinam mapa, barras e séries temporais para analisar vendas por segmento, categoria, fabricante, cliente e estado.</p><div class="callout"><strong>Mudança metodológica:</strong> tabelas são calculadas por funções estatísticas; o LLM distribui tarefas, avalia e explica.</div></div></div>
       <footer class="footer"><span>Seção VI-B · Figura 6</span><span></span></footer>
       <aside class="notes"><span class="time">1 min</span><h3>Cenário tabular</h3><p>O segundo cenário testa a portabilidade para um dashboard de vendas. O arquivo Tableau permite extrair automaticamente parte da especificação. Como cálculos tabulares são mais confiáveis com métodos determinísticos, o LLM atua como orquestrador e comunicador.</p></aside>
@@ -270,7 +270,7 @@
 
     <section class="slide phase-evidence" data-title="Trajetória tabular">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Cenários</span></header>
-      <div class="slide-head"><h2>Do segmento Consumer a preferências regionais</h2><span class="kicker">Quatro passos</span></div>
+      <div class="slide-head"><h2>Sequência de análise no cenário tabular</h2></div>
       <div class="body"><div class="storyline"><div class="story"><time>01</time><h3>Consumer</h3><p>Segmento com maior valor é selecionado.</p></div><div class="story"><time>02</time><h3>Março</h3><p>Mudança significativa aparece na série de vendas.</p></div><div class="story"><time>03</time><h3>Lucro × vendas</h3><p>Função detecta forte correlação positiva.</p></div><div class="story"><time>04</time><h3>Fabricantes</h3><p>Estados revelam preferências regionais distintas.</p></div></div><div class="split-even"><div class="callout"><strong>Evidência:</strong> regras calculam mudança, correlação e ranking.</div><div class="callout" style="--phase:var(--red)"><strong>Cuidado:</strong> “campanha bem-sucedida” é hipótese do LLM, não conclusão dos dados.</div></div></div>
       <footer class="footer"><span>Seção VI-B · Exploração multi-round</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 15 s</span><h3>Resultados tabulares</h3><p>O usuário seleciona Consumer. LEVA encontra um ponto de mudança em março, correlação entre vendas e lucro, estados dominantes e diferenças entre fabricantes nacionais e regionais.</p><p>As explicações causais fornecidas pelo modelo são apenas hipóteses. O sistema deve comunicar essa diferença com clareza.</p></aside>
@@ -278,7 +278,7 @@
 
     <section class="slide phase-evidence" data-title="Lições dos cenários">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Cenários</span></header>
-      <div class="slide-head"><h2>Os cenários demonstram amplitude — não comprovam generalidade</h2><span class="kicker">Síntese</span></div>
+      <div class="slide-head"><h2>Escopo e limites dos cenários de uso</h2></div>
       <div class="body deck-grid" style="--cols:3"><div class="deck-item"><b>AMPLITUDE</b><h3>Muitos tipos de dados</h3><p>Texto, grafos, espaço, tempo e tabelas aparecem em dois sistemas.</p></div><div class="deck-item"><b>PORTABILIDADE</b><h3>Mesmo padrão</h3><p>Especificação, funções, handlers e prompts são reutilizados com adaptações.</p></div><div class="deck-item"><b>EVIDÊNCIA</b><h3>Demonstração guiada</h3><p>Os autores mostram plausibilidade técnica, mas não comparam integração ou desempenho entre domínios.</p></div></div>
       <footer class="footer"><span>Leitura crítica das Seções VI-A e VI-B</span><span></span></footer>
       <aside class="notes"><span class="time">55 s</span><h3>O que os cenários provam</h3><p>Os dois cenários mostram que os componentes podem ser adaptados a dados muito diferentes. Eles demonstram viabilidade e ajudam a compreender o framework.</p><p>Entretanto, não constituem validação da generalidade. Não há comparação sistemática de custo, precisão ou experiência entre domínios.</p></aside>
@@ -286,7 +286,7 @@
 
     <section class="slide phase-evidence" data-title="Desenho do estudo">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Estudo com usuários</span></header>
-      <div class="slide-head"><h2>Um experimento entre grupos com 20 participantes</h2><span class="kicker">Seção VII</span></div>
+      <div class="slide-head"><h2>Desenho experimental</h2></div>
       <div class="body split-even"><div class="study-sample"><div class="study-group control"><strong>10</strong><h3>Controle</h3><p>Sistema VAST original, sem assistência do LEVA.</p></div><div class="study-group treatment"><strong>10</strong><h3>Tratamento</h3><p>Mesmo sistema com onboarding, recomendação e relatório.</p></div></div><div class="number-list"><div class="number-row"><b>N</b><p>20 participantes, de 19 a 25 anos.</p></div><div class="number-row"><b>μ</b><p>Idade média 22,37; desvio padrão 1,79.</p></div><div class="number-row"><b>BG</b><p>Computação, dados, matemática e negócios.</p></div><div class="number-row"><b>VA</b><p>Quatro participantes eram novatos em VA.</p></div></div></div>
       <footer class="footer"><span>Seção VII-A · Alocação aleatória</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 15 s</span><h3>Amostra e condições</h3><p>Vinte participantes foram distribuídos aleatoriamente entre controle e tratamento. Todos usaram o sistema VAST em monitor 2560 por 1440. Quatro eram novatos em visual analytics.</p><p>O objetivo era verificar compreensão, descoberta de insights e eficiência de sumarização.</p></aside>
@@ -294,7 +294,7 @@
 
     <section class="slide phase-evidence" data-title="Questionário">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Estudo com usuários</span></header>
-      <div class="slide-head"><h2>As perguntas retomam os cinco requisitos</h2><span class="kicker">5 objetivas + 9 subjetivas</span></div>
+      <div class="slide-head"><h2>Mapeamento entre requisitos e questões</h2></div>
       <div class="body"><div class="question-map"><span class="qh">Req.</span><span class="qh">Pergunta objetiva</span><span class="qh">Percepção subjetiva</span><b>R1</b><span>O1 · codificação visual e significado dos dados</span><span>S1–S2 · compreensão de elementos e dados</span><b>R2</b><span>O2 · coordenação keyword → timeline</span><span>S3–S4 · compreensão das interações</span><b>R3</b><span>O3 · identificar eventos de maior risco</span><span>S5 · facilidade para obter insights</span><b>R4</b><span>O4 · localizar ator e local no grafo</span><span>S6–S7 · formular e validar descobertas</span><b>R5</b><span>O5 · reconstruir evento e produzir relato</span><span>S8–S9 · facilidade e qualidade do relatório</span></div><p class="small">Respostas objetivas podiam receber 0, 0,5 ou 1. Questões subjetivas usaram escala Likert de 7 pontos.</p></div>
       <footer class="footer"><span>Tabela I · Mapeamento sintetizado</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 15 s</span><h3>Medições</h3><p>Cada requisito aparece em pelo menos uma medida objetiva e uma subjetiva. O1 e O2 testam onboarding. O3 e O4 avaliam descoberta e navegação entre vistas. O5 exige encontrar insights e escrever um relatório.</p><p>A pontuação objetiva aceita meio ponto. As medidas subjetivas usam Likert de sete pontos.</p></aside>
@@ -302,7 +302,7 @@
 
     <section class="slide phase-evidence" data-title="Procedimento">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Estudo com usuários</span></header>
-      <div class="slide-head"><h2>Treinamento, tarefas, escala e entrevista</h2><span class="kicker">Procedimento</span></div>
+      <div class="slide-head"><h2>Procedimento e análise estatística</h2></div>
       <div class="body"><div class="flow" style="--steps:4"><div class="flow-step"><b>10 MIN</b><strong>Introdução</strong><span>framework, sistema original e fluxo de uso</span></div><div class="flow-step"><b>O1–O5</b><strong>Tarefas</strong><span>correção e tempo registrados</span></div><div class="flow-step"><b>S1–S9</b><strong>Escalas</strong><span>avaliação subjetiva em sete pontos</span></div><div class="flow-step"><b>FINAL</b><strong>Entrevista</strong><span>feedback qualitativo curto</span></div></div><div class="split-even"><div class="callout"><strong>Análise:</strong> Shapiro–Wilk seguido de testes t independentes.</div><div class="callout" style="--phase:var(--red)"><strong>Questão crítica:</strong> com n=10 por condição, normalidade, variância e estimativas são pouco estáveis.</div></div></div>
       <footer class="footer"><span>Seção VII-A · Aparato 2560 × 1440</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 15 s</span><h3>Procedimento e testes</h3><p>Todos receberam dez minutos de introdução e puderam acompanhar o experimentador para se familiarizar. Depois responderam às questões objetivas, às subjetivas e participaram de uma entrevista curta.</p><p>Os autores usam Shapiro-Wilk e testes t independentes. Com apenas dez observações por grupo, o teste de normalidade tem baixo poder.</p></aside>
@@ -310,7 +310,7 @@
 
     <section class="slide phase-evidence" data-title="Resultados de precisão">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Resultados</span></header>
-      <div class="slide-head"><h2>A vantagem aparece em todas as tarefas objetivas</h2><span class="kicker">Precisão</span></div>
+      <div class="slide-head"><h2>Resultados: taxa de acerto</h2></div>
       <div class="body split-reverse"><div class="figure wide"><img src="assets/leva-user-study.jpg" alt="Resultados do estudo em precisão, escores subjetivos e tempo"></div><div class="stack"><div class="metric-line"><strong>&gt;85%</strong><span>taxa de acerto do grupo LEVA em O1–O5</span></div><div class="metric-line"><strong>50–65%</strong><span>faixa de acerto do grupo controle</span></div><div class="metric-line"><strong>100%</strong><span>acerto do tratamento em O3</span></div><div class="callout">O maior contraste surge quando é necessário integrar mapa, mensagens e grafo.</div></div></div>
       <footer class="footer"><span>Figura 7 · Correct rate</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 30 s</span><h3>Precisão</h3><p>O tratamento supera 85% em todas as perguntas; o controle fica entre 50% e 65%. Em O1, muitos entendem a codificação, mas não o significado de mbdata e ccdata. Em O2, a coordenação entre keyword e timeline é frequentemente ignorada.</p><p>Em O3 e O4, anotações tornam evento, ator e local mais explícitos. Em O5, poucos controles montam narrativa coerente.</p></aside>
@@ -318,7 +318,7 @@
 
     <section class="slide phase-evidence" data-title="Resultados de tempo">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Resultados</span></header>
-      <div class="slide-head"><h2>Mais confiança percebida e menos tempo — apesar da latência</h2><span class="kicker">Percepção + eficiência</span></div>
+      <div class="slide-head"><h2>Resultados: avaliação subjetiva e tempo</h2></div>
       <div class="body split-even"><div class="bars"><div class="bar-row"><b>Score subjetivo</b><div class="track"><div class="fill" style="--w:74%"></div></div><span>+49,21%</span></div><div class="bar-row"><b>Tempo O2–O5</b><div class="track"><div class="fill" style="--w:61%"></div></div><span>−39,26%</span></div><div class="bar-row"><b>Eventos O3</b><div class="track"><div class="fill" style="--w:58%"></div></div><span>−41,98%</span></div><div class="bar-row"><b>Nós O4</b><div class="track"><div class="fill" style="--w:69%"></div></div><span>−31,27%</span></div><div class="bar-row"><b>Relatório O5</b><div class="track"><div class="fill" style="--w:58%"></div></div><span>−42,27%</span></div></div><div class="number-list"><div class="number-row"><b>25 s</b><p>Resumo longo de eventos; ainda economizou tempo total.</p></div><div class="number-row"><b>5–6 s</b><p>Busca de nós relevantes no grafo.</p></div><div class="number-row"><b>1 falha</b><p>Resumo omitiu o ator principal; free ask recuperou a informação.</p></div></div></div>
       <footer class="footer"><span>Seção VII-B · O1 foi a exceção sem redução significativa</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 30 s</span><h3>Tempo e percepção</h3><p>As notas subjetivas aumentam em média 49,21%. Nas quatro últimas tarefas, o tempo cai 39,26%. Resumir eventos leva cerca de 25 segundos, mas ainda poupa mais tempo do que exige. Encontrar nós leva cinco a seis segundos.</p><p>Uma resposta não identificou claramente o ator principal. O participante precisou usar pergunta livre, acrescentando um minuto.</p></aside>
@@ -326,7 +326,7 @@
 
     <section class="slide phase-evidence" data-title="Feedback">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Resultados</span></header>
-      <div class="slide-head"><h2>Os participantes pedem mais explicação, domínio e edição</h2><span class="kicker">Entrevistas</span></div>
+      <div class="slide-head"><h2>Resultados qualitativos das entrevistas</h2></div>
       <div class="body deck-grid" style="--cols:4"><div class="deck-item"><b>ONBOARDING</b><h3>Animar relações</h3><p>Destacar termos e usar setas para tornar coordenações mais intuitivas.</p></div><div class="deck-item"><b>EXPLORAÇÃO</b><h3>Mais tarefas</h3><p>Adicionar métodos e pontos de partida específicos do domínio.</p></div><div class="deck-item"><b>RELATÓRIO</b><h3>Editar o stream</h3><p>Remover ou fundir passos antes de gerar a narrativa.</p></div><div class="deck-item"><b>ESCALA</b><h3>Componentizar</h3><p>Transformar capacidades em toolkit ou plug-ins reutilizáveis.</p></div></div>
       <footer class="footer"><span>Seções VII-B e VIII</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 10 s</span><h3>Feedback qualitativo</h3><p>Participantes valorizam o tour, as sugestões e os relatórios. As recomendações também inspiraram perguntas próprias. As melhorias propostas são concretas: realçar palavras, animar coordenações, ampliar funções de domínio e permitir editar a trajetória.</p><p>O interesse em plug-ins motivou a direção futura de componentização.</p></aside>
@@ -334,7 +334,7 @@
 
     <section class="slide phase-review" data-title="Pontos fortes">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Revisão</span></header>
-      <div class="slide-head"><h2>Como revisores, reconheceríamos cinco méritos</h2><span class="kicker">Pontos fortes</span></div>
+      <div class="slide-head"><h2>Pontos fortes do artigo</h2></div>
       <div class="body"><div class="number-list"><div class="number-row"><b>01</b><p><strong>Escopo coerente:</strong> onboarding, exploração e sumarização formam um único fluxo.</p></div><div class="number-row"><b>02</b><p><strong>Arquitetura híbrida:</strong> LLM interpreta; funções verificáveis calculam.</p></div><div class="number-row"><b>03</b><p><strong>Integração visual:</strong> anotações ligam linguagem e evidência.</p></div><div class="number-row"><b>04</b><p><strong>Rastreabilidade:</strong> desafios, requisitos, componentes e perguntas se correspondem.</p></div><div class="number-row"><b>05</b><p><strong>Reflexividade:</strong> a discussão reconhece erro, latência, dependência e custo.</p></div></div></div>
       <footer class="footer"><span>Análise crítica do grupo</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 30 s</span><h3>Forças</h3><p>A contribuição principal é a coerência entre problema e arquitetura. A decisão de usar funções para cálculos e o LLM para interpretação reduz um risco conhecido. Ancorar insights nas vistas melhora rastreabilidade.</p><p>Também é forte a correspondência entre C1–C3, R1–R5 e o questionário. Os autores discutem limitações importantes.</p></aside>
@@ -342,7 +342,7 @@
 
     <section class="slide phase-review" data-title="Pontos fracos">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Revisão</span></header>
-      <div class="slide-head"><h2>A contribuição é maior que a evidência disponível</h2><span class="kicker">Limitações</span></div>
+      <div class="slide-head"><h2>Limitações e ameaças à validade</h2></div>
       <div class="body deck-grid" style="--cols:3"><div class="deck-item"><b>AMOSTRA</b><h3>n = 10 por condição</h3><p>Baixo poder, estimativas instáveis e nenhuma análise robusta de subgrupos.</p></div><div class="deck-item"><b>VALIDADE</b><h3>Um sistema</h3><p>Usuários jovens, tarefas curtas e apenas o cenário VAST no experimento.</p></div><div class="deck-item"><b>ESTATÍSTICA</b><h3>Relato incompleto</h3><p>Pouca ênfase em efeito, intervalo de confiança e múltiplas comparações.</p></div><div class="deck-item"><b>MODELO</b><h3>GPT-4 mutável</h3><p>Versão, custo e variabilidade dificultam reprodução longitudinal.</p></div><div class="deck-item"><b>GUIDANCE</b><h3>Viés de direção</h3><p>Boas sugestões podem ocultar caminhos que o sistema não recomenda.</p></div><div class="deck-item"><b>INTEGRAÇÃO</b><h3>Trabalho manual</h3><p>Especificações, handlers, funções e prompts precisam ser adaptados.</p></div></div>
       <footer class="footer"><span>Análise crítica · Ameaças à validade</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 50 s</span><h3>Fraquezas</h3><p>A principal limitação é a distância entre a reivindicação ampla e a avaliação estreita. Vinte participantes e um único sistema não validam generalização. O uso de testes paramétricos com dez pessoas por grupo merece cautela, e faltam tamanhos de efeito e intervalos de confiança em destaque.</p><p>Também há riscos de reprodução, dependência do modelo e viés de orientação.</p></aside>
@@ -350,8 +350,8 @@
 
     <section class="slide phase-review" data-title="Parecer">
       <header class="mast"><span>SCC5836 · LEVA</span><span class="phase">Revisão</span></header>
-      <div class="slide-head"><h2>Parecer final</h2><span class="kicker">Síntese</span></div>
-      <div class="body verdict"><div class="stamp">Aceitar<br>com<br>ressalvas</div><div class="stack"><p class="statement">LEVA propõe uma relação <em>produtiva</em> entre IA e visualização.</p><div class="number-list"><div class="number-row"><b>+</b><p>O modelo amplia a interface sem retirar o analista do ciclo.</p></div><div class="number-row"><b>+</b><p>A arquitetura separa linguagem, cálculo, evidência e decisão.</p></div><div class="number-row"><b>±</b><p>Os resultados são consistentes, mas ainda iniciais.</p></div><div class="number-row"><b>→</b><p>Próximo passo: múltiplos sistemas, domínios, modelos e tarefas longas.</p></div></div></div></div>
+      <div class="slide-head"><h2>Conclusão e parecer do grupo</h2></div>
+      <div class="body verdict"><div class="stamp">Parecer<br>Aceitar com ressalvas</div><div class="stack"><p class="statement">Síntese: LEVA estrutura uma colaboração entre IA e visualização ao longo do fluxo analítico.</p><div class="number-list"><div class="number-row"><b>+</b><p>O modelo amplia a interface sem retirar o analista do ciclo.</p></div><div class="number-row"><b>+</b><p>A arquitetura separa linguagem, cálculo, evidência e decisão.</p></div><div class="number-row"><b>±</b><p>Os resultados são consistentes, mas ainda iniciais.</p></div><div class="number-row"><b>→</b><p>Próximo passo: múltiplos sistemas, domínios, modelos e tarefas longas.</p></div></div></div></div>
       <footer class="footer"><span>Zhao et al. · IEEE TVCG 31(3), 2025</span><span></span></footer>
       <aside class="notes"><span class="time">1 min 30 s</span><h3>Conclusão</h3><p>Nossa decisão seria aceitar com ressalvas. A contribuição é relevante porque mostra como LLMs podem ampliar sistemas de visual analytics sem substituir funções verificáveis nem o julgamento humano. Os cenários e o estudo oferecem evidência inicial consistente.</p><p>As ressalvas concentram-se em validade externa, força estatística, reprodutibilidade e custo de integração.</p></aside>
     </section>
