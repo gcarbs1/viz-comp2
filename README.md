@@ -19,7 +19,6 @@ Depois, acesse [http://localhost:8000](http://localhost:8000).
 - `→`, `Page Down`, `Espaço` ou `Enter`: próximo slide
 - `←`, `Page Up` ou `Backspace`: slide anterior
 - `Home` / `End`: primeiro ou último slide
-- `N`: notas do apresentador
 - `F`: tela cheia
 - Gestos horizontais e rolagem também mudam os slides
 
