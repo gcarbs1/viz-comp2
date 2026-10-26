@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editores e IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependências e artefatos temporários
+node_modules/
+dist/
+build/
+*.log
+.cache/
+
+# Arquivos locais de ambiente
+.env
+.env.*
+!.env.example
